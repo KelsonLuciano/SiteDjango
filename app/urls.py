@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import include, path
 
+
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
@@ -42,3 +43,9 @@ from core.views import CategoriaViewSet # nova linha
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet) # nova linha
 router.register(r"users", UserViewSet, basename="users")
+
+from core.views import UserViewSet, CategoriaViewSet, EditoraViewSet
+router.register(r"editoras", EditoraViewSet)
+
+from core.views import UserViewSet, CategoriaViewSet, AutorViewSet
+router.register(r"autores", AutorViewSet)
