@@ -49,3 +49,6 @@ router.register(r"editoras", EditoraViewSet)
 
 from core.views import UserViewSet, CategoriaViewSet, AutorViewSet
 router.register(r"autores", AutorViewSet)
+
+from core.views import UserViewSet, CategoriaViewSet, LivroViewSet
+router.register(r"editoras", LivroViewSet)
