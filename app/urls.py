@@ -38,17 +38,14 @@ urlpatterns = [
 ]
 
 from core.views import UserViewSet
-from core.views import CategoriaViewSet # nova linha
+from core.views import CategoriaViewSet
+from core.views import LivroViewSet
+from core.views import AutorViewSet
+from core.views import EditoraViewSet
 
 router = DefaultRouter()
-router.register(r"categorias", CategoriaViewSet) # nova linha
+router.register(r"categorias", CategoriaViewSet)
 router.register(r"users", UserViewSet, basename="users")
-
-from core.views import UserViewSet, CategoriaViewSet, EditoraViewSet
 router.register(r"editoras", EditoraViewSet)
-
-from core.views import UserViewSet, CategoriaViewSet, AutorViewSet
 router.register(r"autores", AutorViewSet)
-
-from core.views import UserViewSet, CategoriaViewSet, LivroViewSet
-router.register(r"editoras", LivroViewSet)
+router.register(r"livro", LivroViewSet)
