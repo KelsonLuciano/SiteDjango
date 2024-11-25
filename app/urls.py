@@ -11,10 +11,17 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from core.views import UserViewSet
+from core.views import CategoriaViewSet
+from core.views import LivroViewSet
+from core.views import AutorViewSet
+from core.views import EditoraViewSet
 
 router = DefaultRouter()
-
-router.register(r"usuarios", UserViewSet, basename="usuarios")
+router.register(r"categorias", CategoriaViewSet)
+router.register(r"users", UserViewSet, basename="users")
+router.register(r"editoras", EditoraViewSet)
+router.register(r"autores", AutorViewSet)
+router.register(r"livro", LivroViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -37,15 +44,3 @@ urlpatterns = [
     path("api/", include(router.urls)),
 ]
 
-from core.views import UserViewSet
-from core.views import CategoriaViewSet
-from core.views import LivroViewSet
-from core.views import AutorViewSet
-from core.views import EditoraViewSet
-
-router = DefaultRouter()
-router.register(r"categorias", CategoriaViewSet)
-router.register(r"users", UserViewSet, basename="users")
-router.register(r"editoras", EditoraViewSet)
-router.register(r"autores", AutorViewSet)
-router.register(r"livro", LivroViewSet)
