@@ -18,6 +18,14 @@ from core.views import CategoriaViewSet
 from core.views import LivroViewSet
 from core.views import AutorViewSet
 from core.views import EditoraViewSet
+from core.views import (
+    AutorViewSet,
+    CategoriaViewSet,
+    CompraViewSet, # inclua essa linha
+    EditoraViewSet,
+    LivroViewSet,
+    UserViewSet,
+)
 
 router = DefaultRouter()
 router.register(r"categorias", CategoriaViewSet)
@@ -25,6 +33,7 @@ router.register(r"users", UserViewSet, basename="users")
 router.register(r"editoras", EditoraViewSet)
 router.register(r"autores", AutorViewSet)
 router.register(r"livro", LivroViewSet)
+router.register(r"compras", CompraViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
