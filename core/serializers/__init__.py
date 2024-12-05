@@ -5,4 +5,4 @@ from .autor import AutorSerializer
 from .livro import LivroSerializer
 from .livro import LivroDetailSerializer, LivroSerializer
 from .livro import LivroListSerializer
-from .compra import CompraSerializer, ItensCompraSerializer
+from .compra import CompraSerializer, CompraCreateUpdateSerializer, ItensCompraSerializer
