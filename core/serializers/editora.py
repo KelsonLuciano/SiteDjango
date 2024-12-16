@@ -9,3 +9,4 @@ class EditoraSerializer(ModelSerializer):
 
     def validate_email(self, email):
         return email.lower()
+    
