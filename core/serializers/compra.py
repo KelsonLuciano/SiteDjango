@@ -26,6 +26,11 @@ class ItensCompraCreateUpdateSerializer(ModelSerializer):
         model = ItensCompra
         fields = ("livro", "quantidade")
 
+    def validate_quantidade(self, quantidade):
+        if quantidade <= 0:
+            raise ValidationError("A quantidade deve ser maior do que zero.")
+        return quantidade
+
     def validate(self, item):
         if item["quantidade"] > item["livro"].quantidade:
             raise ValidationError("Quantidade de itens maior do que a quantidade em estoque.")
